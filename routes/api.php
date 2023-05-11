@@ -18,7 +18,7 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-Route::get('Eventos','App\Http\Controllers\EventosController@GetEventos');
-Route::get('Eventos/{Id}','App\Http\Controllers\EventosController@GetEventoId');
-Route::post('Tickets','App\Http\Controllers\TicketsController@store');
-Route::get('Tickets/{Id}','App\Http\Controllers\TicketsController@GetCompras');
+Route::get('events','App\Http\Controllers\EventosController@GetEventos');
+Route::get('event/{Id}','App\Http\Controllers\EventosController@GetEventoId');
+Route::post('purchase','App\Http\Controllers\TicketsController@store');
+Route::get('orders/{Id}','App\Http\Controllers\TicketsController@GetCompras');

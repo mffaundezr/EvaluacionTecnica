@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Tickets;
-use App\Models\Eventos;
+
 
 class TicketsController extends Controller
 {
@@ -16,7 +16,6 @@ class TicketsController extends Controller
     public function GetCompras($Id_usuario){
         $compras = Tickets::where('id_usuario', $Id_usuario)->get();
         
-       
         if (is_null($compras)) {
             return response()->json(['Mensaje Error'=>'Usuario no ha realizado compras']);
         }else {
@@ -24,7 +23,7 @@ class TicketsController extends Controller
         }
         
     }
-    #compra de ticket de un cliente para un evento
+    #compra de ticket de un usuario para un evento
     public function store(Request $request){
         $compra = new Tickets;
         $compra->id_evento=$request->id_evento;
