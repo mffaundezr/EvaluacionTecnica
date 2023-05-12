@@ -16,7 +16,7 @@ class EventosController extends Controller
     public function GetEventoId($Id){
         $evento = Eventos::find($Id);
         if (is_null($evento)) {
-            return response()->json(['Mensaje Error'=>'Evento no disponible']);
+            return response()->json(['Mensaje Error'=>'Evento no disponible'],404);
         }else {
             return response()->json($evento::find($Id),200);
         }
